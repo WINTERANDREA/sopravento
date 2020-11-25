@@ -1,0 +1,465 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* CAROSELLO */
+
+.container {
+  max-width: 1900px;
+}
+
+.slider_container {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.slick-slider {
+  position: relative;
+  display: block;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.slick-slide img {
+  display: inline-block !important;
+}
+
+.slick-list {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-list:focus {
+  outline: none;
+}
+
+.slick-list.dragging {
+  cursor: hand;
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.slick-track:before,
+.slick-track:after {
+  display: table;
+  content: "";
+}
+
+.slick-track:after {
+  clear: both;
+}
+
+.slick-loading .slick-track {
+  visibility: hidden;
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+}
+
+.slick-slide.dragging img {
+  pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+  display: block;
+}
+
+.slick-loading .slick-slide {
+  visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
+}
+
+.img-fill {
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.img-fill img {
+  height: 100%;
+  min-width: 100%;
+  position: relative;
+  display: inline-block;
+  max-width: none;
+}
+/* Slider Theme Style */
+
+.Carosello {
+  padding: 50px 70px 140px 70px;
+}
+
+.Carosello:after,
+.Carosello .Head:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.Carosello .Head {
+  font-size: 40px;
+  font-family: "Gotham", sans-serif;
+  font-weight: bold;
+  color: var(--primary);
+  height: 52px;
+  over-flow: hidden;
+  border-bottom: 1px solid var(--primary);
+}
+
+.Carosello .Head .Arrows {
+  float: right;
+  cursor: pointer;
+}
+
+.Carosello .Head .Slick-Next,
+.Carosello .Head .Slick-Prev {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  margin-top: 6px;
+  color: #fff;
+  margin-left: 5px;
+  cursor: pointer;
+  font: 18px/36px FontAwesome;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.Carosello .Head .Slick-Next {
+  background: url(../img/tech_right.svg),
+    linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+  background-position: center;
+  background-size: cover;
+  width: 65px;
+}
+
+.Carosello .Head .Slick-Prev {
+  background: url(../img/tech_left.svg),
+    linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+  background-position: center;
+  background-size: cover;
+  width: 65px;
+}
+
+.Carosello .Head .Slick-Next:hover {
+  background: url(../img/tech_right.svg),
+    linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  background-position: center;
+  background-size: cover;
+  transform: scale(0.9);
+}
+
+.Carosello .Head .Slick-Prev:hover {
+  background: url(../img/tech_left.svg),
+    linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  background-position: center;
+  background-size: cover;
+  transform: scale(0.9);
+}
+
+.SlickCarousel {
+  margin: 0 -7.5px;
+  margin-top: 10px;
+}
+
+.ProductBlock {
+  width: 350px;
+  padding: 0 7.5px;
+  display: flex;
+  justify-content: center;
+}
+.ProductBlock:focus {
+  border: none;
+  outline: none;
+}
+
+.ProductBlock .img-fill {
+  height: 200px;
+}
+
+.ProductBlock h3 {
+  font: 15px/36px RalewayR;
+  color: #393939;
+  margin-top: 5px;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+/* Loader - Spinner */
+#loader_container {
+  height: 205px;
+  background-color: white;
+  z-index: 400;
+  width: 101%;
+}
+#loader {
+  border: 6px solid #f3f3f3; /* Light grey */
+  border-top: 6px solid var(--primary); /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+  z-index: 20;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden2 {
+  display: none;
+}
+
+/* FACEBOOK POST */
+.fb_post_card {
+  position: relative;
+  background-color: white;
+  height: 380px;
+  width: 350px;
+  /* border: 1px solid #d0d1d5; */
+  border: none;
+  border-radius: 3px;
+  box-shadow: 10px 0 10px -5px rgba(0, 0, 0, 0.3);
+}
+
+.fb_header {
+  position: absolute;
+  display: flex;
+  top: 10px;
+  left: 10px;
+}
+
+.fb_from_container {
+  color: white;
+  font-weight: bold;
+}
+
+.post_data {
+  font-size: 10px;
+  color: white;
+  font-weight: 100;
+}
+
+.post_data:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.fb_icona_365 {
+  width: 50px;
+}
+.fb_icona {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.fb_img {
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fb_name p {
+  padding: 10px 20px 0 20px;
+  color: #666;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.fb_message {
+  height: 90px;
+  overflow-y: hidden;
+}
+
+.fb_more a {
+  padding: 10px 20px;
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: -5px;
+  margin-bottom: 20px;
+  float: right;
+  letter-spacing: 1px;
+}
+
+.fb_more a:focus {
+  outline: none;
+}
+
+.fb_message p {
+  padding: 5px 20px 10px 20px;
+  color: #666;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.social {
+  text-align: center;
+  margin-top: 45px;
+  padding: 0 20px;
+}
+.social-buttons {
+  color: rgba(102, 102, 102, 0.6);
+  font-family: Helvetica;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 14px;
+
+  border-top: 1px solid #e5e5e5;
+  padding-top: 7px;
+}
+
+.social-buttons img {
+  margin-top: -2px;
+  width: 22px;
+}
+
+.social-buttons span a {
+  color: rgba(102, 102, 102, 0.6);
+  font-size: 12px;
+  margin-right: 20px;
+  padding: 4px 4px 4px 0;
+}
+
+.social-buttons span a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.social-buttons span a {
+  padding-right: 4px;
+}
+
+.hidden2 {
+  display: none;
+}
+/* POST FACEBOOK */
+
+#post_container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: self-start;
+  align-content: center;
+  height: 400px;
+}
+
+#post_container > div {
+  width: 400px;
+  padding: 20px;
+}
+
+/* Big screens >  1660px */
+@media screen and (min-width: 1660px) {
+  .Carosello {
+    padding: 30px 30px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #post_container {
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+  }
+}
+
+/* Small Tablet 768px */
+@media screen and (max-width: 768px) {
+  #post_container {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .Carosello {
+    padding: 50px;
+  }
+}
+
+/* Mobile < 490px */
+@media screen and (max-width: 490px) {
+  .Carosello {
+    padding: 50px 30px;
+  }
+
+  .fb_post_card {
+    width: 100%;
+  }
+}
+
+/* Mobile < 403px */
+@media screen and (max-width: 403px) {
+  .Carosello .Head {
+    padding-left: 15px;
+  }
+  .Carosello {
+    padding: 50px 0;
+  }
+  .Carosello .Head .Slick-Prev,
+  .Carosello .Head .Slick-Next {
+    width: 50px;
+  }
+
+  .Carosello .Head .Slick-Next {
+    margin-right: 10px;
+  }
+
+  #carousel {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
