@@ -1,6 +1,6 @@
 /* Variabili */
 let id_product_catalog = "334489137289664";
-let access_token = "EAAU6oAzul1YBAIOpu17Vml7JIOtZCM8ctPmA9CLhvGJoEsMUjZA1DsabQtkvLdaQ0UMwUiojHUSvnsaolRLW3YIySJq0WZAZCZAC14TS7TNttYobDPZALF5NhvtZCPBtPiLMnWKkVfZBXoahCZBoWf8lzFOBNfWCZAGRo0g2ZADEZCtY7wZDZD";
+let access_token = "EAAU6oAzul1YBAFOyDV8B9uLQZC6raZBu0v50oi9WZBX3dGL6ECzW6p6UBa1Lo8Drd9gsvoNNghI2C5q2svzuEHNcy7SxZACmvGPGhgxBy5z9EsGhl9jqRaF77sCtMkacsx1xtscZCciTZCUZCxpiWORESZCe7F0abadkrxJUZBrQCZACRa2qqvVa4x";
 
 var products_published = []
 var count_product;
