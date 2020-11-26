@@ -26,16 +26,36 @@ async function get_posts(){
 get_posts()
 .then( data => {
      var p_number = 1;
-    console.log(data)
     data.forEach(element => {
+      //Create HTML template for each product
+      const ProductBlock = `<div class="ProductBlock">
+            <div class="Content">
+              <div class="fb_post_card" id="post_${p_number}">
+                <div class="fb_header d-flex w-100 align-items-center ">
+                  <img class="fb_icona_365 mt-1 mr-2" src="img/sopravento_logo.png" alt="assistenza365_logo" />
+                  <div class="fb_from_container d-flex flex-column " id="fb_from_${p_number}">
+                    <span style="font-weight: 400;">Sopravento srl</span>
+                  </div>
+                  <img class="fb_icona" src="./img/fb_icon.png" alt="fb_icona" />
+                </div>
+                <div class="fb_img img-fluid" id="fb_img_${p_number}"></div>
+                <div class="fb_name" id="fb_name_${p_number}">
+                </div>
+                <div class="fb_message" id="fb_message_${p_number}">
+                </div>
+                <div id="fb_more_${p_number}" class="fb_more">
+                </div>
+              </div>
+            </div>
+          </div>`
+      document.querySelector('#p_container').insertAdjacentHTML('afterbegin', ProductBlock);
+      
+      //Insert product data
       var p_state = document.getElementById("post_" + p_number)
       var p_image = document.getElementById("fb_img_" + p_number)
       var p_name = document.getElementById("fb_name_" + p_number)
       var p_message = document.getElementById("fb_message_" + p_number)  
       var p_more = document.getElementById("fb_more_" + p_number)
-      
-      
-      
       p_state.setAttribute("fb-xfbml-state",true)
       p_image.style.backgroundImage = `linear-gradient(to bottom, rgba(0, 170, 248,.2) 2%, rgba(0, 170, 248,.1)), url(${element["image_cdn_urls"][1]?.value})`
       p_name.insertAdjacentHTML("afterbegin", `<p>${element.name}</p>`)
@@ -52,9 +72,7 @@ get_posts()
 /* INITIALIZE CAROUSEL */
 window.onload = function(){
   FB.Event.subscribe('xfbml.render', function(response) {
-    console.log(response)
     let renders = document.querySelectorAll("[fb-xfbml-state]");
-     console.log(renders)
     if (renders.length == count_product){
       $(".SlickCarousel").slick({
     rtl:false, // If RTL Make it true & .slick-slide{float:right;}
