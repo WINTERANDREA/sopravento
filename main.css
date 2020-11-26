@@ -136,7 +136,7 @@
   font-weight: bold;
   color: var(--primary);
   height: 52px;
-  over-flow: hidden;
+  overflow: hidden;
   border-bottom: 1px solid var(--primary);
 }
 
